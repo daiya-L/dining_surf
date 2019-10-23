@@ -210,7 +210,7 @@ a {
 .about__img-block {
   display: flex;
   justify-content: space-around;
-  margin: 80px auto;
+  margin: 80px 0 120px;
 }
 
 .about__img-cap {
@@ -242,7 +242,7 @@ a {
 
   &:hover .mask {
     opacity: 1;
-    padding-top: 80px;
+    padding-top: 100px;
   }
 }
 
@@ -258,12 +258,16 @@ a {
   margin: 0 40px;
 }
 
-.food__menu, .drink__menu {
+.food__menu-1, .food__menu-2, .drink__menu, .drink__menu-4 {
   width: 50%;
   margin-bottom: 80px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.column-reverse {
+  flex-direction: column-reverse;
 }
 
 .drink__menu-2, .drink__menu-3 {
@@ -283,7 +287,7 @@ a {
 }
 
 .and-more {
-  margin: -20px 80px 40px auto;
+  margin: -20px 62px 40px auto;
   text-align: right;
   display: block;
 
@@ -307,6 +311,7 @@ a {
 .access__content {
   display: flex;
   align-items: center;
+  margin: 0 40px;
 }
 
 .access__text-block {
@@ -379,15 +384,21 @@ a {
   }
 
   .about__title {
-    margin: 120px 0 0 0;
+    margin-top: 120px;
+    margin-bottom: 0;
   }
 
   .about__text-block {
-    margin: 120px;
+    margin: 60px 120px 120px;
   }
 
   .about__text {
     line-height: 2.8rem;
+    font-size: 1.6rem;
+  }
+
+  .food__text, .drink__text {
+    font-size: 1.4rem;
   }
 
   .and-more {
@@ -462,7 +473,7 @@ a {
     }
 
     .active span:nth-of-type(1) {
-      -webkit-transform: translateY(20px) rotate(-225deg);
+      -webkit-transform: translateY(16px) rotate(-225deg);
       transform: translateY(16px) rotate(-225deg);
     }
     .active span:nth-of-type(2) {
@@ -526,7 +537,10 @@ a {
   .about__title {
     margin-top: 40px;
     margin-bottom: 0;
+    margin-left: 0;
     padding-bottom: 0;
+    padding-left: 36px;
+    text-align: left;
   }
 
   .about__title-block {
@@ -536,6 +550,11 @@ a {
   .about__text-block {
     margin-top: 40px;
     margin-bottom: 40px;
+    padding-left: 20px;
+  }
+
+  .about__text {
+    text-align: left;
   }
 
   .about__title-img {
@@ -583,14 +602,31 @@ a {
     margin: 0;
   }
 
-  .food__menu, .drink__menu {
+  .food, .drink {
+    margin: 0 4rem;
+  }
+
+  .food__menu-1, .food__menu-2, .drink__menu {
     width: 95%;
-    margin: 0 0.5rem 3rem;
+    margin: 0 0 3rem;
     font-size: 1.2rem;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
     align-items: center;
+  }
+
+  .food__menu-1 {
+    justify-content: flex-start;
+    .food__text {
+      margin-left: 40px;
+    }
+  }
+
+  .food__menu-2 {
+    justify-content: flex-end;
+    .food__text {
+      margin-right: 40px;
+    }
   }
 
   .and-more {
@@ -598,7 +634,10 @@ a {
   }
 
   .drink__menu {
-    justify-content: space-around;
+    justify-content: flex-start;
+    .drink__text {
+      margin-left: 60px;
+    }
   }
 
   .drink-sp {
@@ -608,30 +647,44 @@ a {
 
   .drink__menu-2 {
     display: flex;
-    flex-direction: row;
+    flex-direction: row-reverse;
     align-items: center;
     margin-bottom: 3rem;
-    justify-content: space-around;
-    margin-left: -30px;
+    justify-content: flex-start;
+    .drink__img {
+      width: 52%;
+      margin-right: -32px;
+    }
+    .drink__text {
+      margin: 0 60px 0 0;
+    }
   }
 
   .drink__menu-3 {
     display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-bottom: 0
+  }
+
+  .drink__menu-4 {
+    display: flex;
     flex-direction: row-reverse;
     align-items: center;
     justify-content: flex-start;
-
-    .drink__img {
-      margin-left: 160px;
+    margin-bottom: 40px;
+    .drink__text {
+      margin-right: 60px;
     }
   }
 
   .food__img, .drink__img {
     width: 50%;
-    margin: 0 0.5rem;
+    margin: 0;
   }
 
-  .food__text, .drink__text {
+  .drink__text {
     margin: 0;
   }
 
@@ -942,19 +995,36 @@ a {
     margin: 1rem 0;
   }
 
+  .food, .drink {
+    margin: 0 10px;
+  }
+
   .food__img-block, .drink__img-block {
     display: block;
     margin: 0;
   }
 
-  .food__menu, .drink__menu {
+  .food__menu-1, .food__menu-2, .drink__menu {
     width: 95%;
     margin: 0 0.5rem 3rem;
     font-size: 0.9rem;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
     align-items: center;
+  }
+
+  .food__menu-1 {
+    justify-content: flex-start;
+    .food__text {
+      margin-left: 10px;
+    }
+  }
+
+  .food__menu-2 {
+    justify-content: flex-end;
+    .food__text {
+      margin-right: 10px;
+    }
   }
 
   .and-more {
@@ -962,7 +1032,10 @@ a {
   }
 
   .drink__menu {
-    justify-content: space-around;
+    justify-content: flex-start;
+    .drink__text {
+      margin-left: 10px;
+    }
   }
 
   .drink-sp {
@@ -972,23 +1045,48 @@ a {
 
   .drink__menu-2 {
     display: flex;
-    flex-direction: row;
+    flex-direction: row-reverse;
     align-items: center;
     margin-bottom: 3rem;
-    justify-content: space-around;
-    margin-left: -24px;
+    justify-content: flex-start;
+    .drink__img {
+      width: 52%;
+    }
+    .drink__text {
+      margin: 0 10px 0 0;
+    }
   }
 
   .drink__menu-3 {
     display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-bottom: 0;
+    .drink__text {
+      margin-left: 10px;
+    }
+  }
+
+  .drink__menu-4 {
+    display: flex;
     flex-direction: row-reverse;
     align-items: center;
-    justify-content: space-around;
+    justify-content: flex-start;
+    margin-bottom: 40px;
+    width: 100%;
+    font-size: 0.9rem;
+    .drink__text {
+      margin-right: 10px;
+    }
+    .drink__img {
+      margin-right: 8px;
+    }
   }
 
   .food__img, .drink__img {
     width: 50%;
-    margin: 0 0.5rem;
+    margin: 0;
   }
 
   .food__text, .drink__text {
